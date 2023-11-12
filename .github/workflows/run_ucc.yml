@@ -1,11 +1,11 @@
-name: Run tournament checker
+name: Run tournament checker (UCC)
 on:
   schedule:
     - cron: "0 0 * * *"
 jobs:
   check-tournaments:
     runs-on: ubuntu-latest
-    environment: test
+    environment: UCC
     steps:
       - uses: actions/checkout@v2
         with:

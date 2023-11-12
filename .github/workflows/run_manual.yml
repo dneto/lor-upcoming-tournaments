@@ -2,10 +2,16 @@ name: Run tournament checker
 on:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to run tests against"
+        type: environment
+        required: true
 jobs:
   check-tournaments:
     runs-on: ubuntu-latest
-    environment: test
+    environment: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@v2
         with:

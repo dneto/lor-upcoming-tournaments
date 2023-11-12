@@ -1,0 +1,25 @@
+name: Run tournament checker (UCC)
+on:
+  schedule:
+    - cron: "0 16 * * *"
+jobs:
+  check-tournaments:
+    runs-on: ubuntu-latest
+    environment: lor.dne.to
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.6.1"
+      - run: yarn install
+      - name: Check tournaments
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+          CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          AVATAR_URL: ${{ secrets.AVATAR_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+        run: node src/index.js

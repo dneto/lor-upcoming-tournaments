@@ -4,7 +4,7 @@ import utc from "dayjs/plugin/utc.js";
 
 import { load } from "cheerio";
 import { calendar_v3, google } from "googleapis";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(utc);

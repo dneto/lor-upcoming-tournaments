@@ -2,6 +2,11 @@ name: Run tournament checker
 on:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
+    environment:
+    description: "Environment to run tests against"
+    type: environment
+    required: false
 jobs:
   check-tournaments:
     runs-on: ubuntu-latest

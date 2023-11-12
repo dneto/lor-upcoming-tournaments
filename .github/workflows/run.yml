@@ -1,0 +1,15 @@
+name: Run tournament checker
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  check-tournaments:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v3
+        with: node-version:"20.6.1"
+      - name: Check tournaments
+        run: node src/index.js

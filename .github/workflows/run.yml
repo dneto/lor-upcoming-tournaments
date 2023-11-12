@@ -17,5 +17,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "20.6.1"
+      - run: yarn install
       - name: Check tournaments
         run: node src/index.js

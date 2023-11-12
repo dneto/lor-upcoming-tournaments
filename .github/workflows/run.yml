@@ -1,4 +1,4 @@
-name: Run tournament checker
+name: Run tournament checker (test)
 on:
   schedule:
     - cron: "0 0 * * *"

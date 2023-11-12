@@ -1,4 +1,4 @@
-name: Run tournament checker
+name: Run tournament checker (manual)
 on:
   workflow_dispatch:
     inputs:

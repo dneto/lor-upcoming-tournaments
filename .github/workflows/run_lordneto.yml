@@ -1,4 +1,4 @@
-name: Run tournament checker (UCC)
+name: Run tournament checker (lor.dne.to)
 on:
   schedule:
     - cron: "0 16 * * *"

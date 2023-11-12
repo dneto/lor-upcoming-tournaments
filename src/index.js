@@ -64,7 +64,7 @@ export async function listEvents({
 }
 
 function tournamentLine(tournament) {
-  return `> [⏰ **<t:${tournament.startDate}:t>** ${tournament.title}](<${tournament.registrationLink}>)`;
+  return `> - [<t:${tournament.startDate}:f> ${tournament.title}](<${tournament.registrationLink}>)`;
 }
 
 async function main() {
@@ -105,7 +105,7 @@ async function main() {
     opts: {
       username: USERNAME,
       avatar_url: AVATAR_URL,
-      content: `# <t:${dayjs().unix()}:D>\n${content}`,
+      content: content,
     },
   });
 }
